@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="64dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imgShortcut"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_btn_service"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:roundPercent="0.25"
+        tools:src="@drawable/ic_launcher_foreground" />
+
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgShortcut"
+        tools:text="@tools:sample/first_names" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

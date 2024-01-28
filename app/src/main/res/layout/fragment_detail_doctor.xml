@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayF1F1F1"
+    tools:context=".homescreen.ui.DetailDoctorFragment">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="@color/blue116696"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imgAvatar"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="110dp"
+        android:foreground="@drawable/bg_round_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:roundPercent="1"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPersonalInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/DefaultMargin"
+        android:layout_marginTop="@dimen/DefaultMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgAvatar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tvPersonalInfoTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/personalInforTitle"
+                android:textAlignment="center"
+                android:textColor="@color/blue116696"
+                android:textSize="@dimen/LargeTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPersonalInfoTitle" />
+
+            <TextView
+                android:id="@+id/tvNameTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/fullNameTitle"
+                android:textSize="@dimen/TooMediumTextSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/TextAppearance.PrivateHospital.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvNameTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvNameTitle"
+                app:layout_constraintTop_toTopOf="@id/tvNameTitle"
+                tools:text="@tools:sample/full_names" />
+
+            <TextView
+                android:id="@+id/tvPhoneNumberTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/phoneNumberTitle"
+                android:textSize="@dimen/TooMediumTextSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNameTitle" />
+
+            <TextView
+                android:id="@+id/tvPhoneNumber"
+                style="@style/TextAppearance.PrivateHospital.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvPhoneNumberTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvPhoneNumberTitle"
+                app:layout_constraintTop_toTopOf="@id/tvPhoneNumberTitle"
+                tools:text="@tools:sample/us_phones" />
+
+            <TextView
+                android:id="@+id/tvSexTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/sexTitle"
+                android:textSize="@dimen/TooMediumTextSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPhoneNumberTitle" />
+
+            <TextView
+                android:id="@+id/tvSex"
+                style="@style/TextAppearance.PrivateHospital.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvSexTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvSexTitle"
+                app:layout_constraintTop_toTopOf="@id/tvSexTitle"
+                tools:text="Nam" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDoctorInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/DefaultMargin"
+        android:layout_marginTop="@dimen/DefaultMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvPersonalInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tvDoctorInfoTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/doctorInfoTitle"
+                android:textAlignment="center"
+                android:textColor="@color/blue116696"
+                android:textSize="@dimen/LargeTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDoctorInfoTitle" />
+
+            <TextView
+                android:id="@+id/tvHospitalTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/workPlaceTitle"
+                android:textSize="@dimen/TooMediumTextSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+            <TextView
+                android:id="@+id/tvHospital"
+                style="@style/TextAppearance.PrivateHospital.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvHospitalTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvHospitalTitle"
+                app:layout_constraintTop_toTopOf="@id/tvHospitalTitle"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/tvMajorTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/majorTitle"
+                android:textSize="@dimen/TooMediumTextSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHospitalTitle" />
+
+            <TextView
+                android:id="@+id/tvMajor"
+                style="@style/TextAppearance.PrivateHospital.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvMajorTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvMajorTitle"
+                app:layout_constraintTop_toTopOf="@id/tvMajorTitle"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/tvDescribeTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/describeTitle"
+                android:textSize="@dimen/TooMediumTextSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMajorTitle" />
+
+            <TextView
+                android:id="@+id/tvDescribe"
+                style="@style/TextAppearance.PrivateHospital.Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:maxHeight="88dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvDescribeTitle"
+                app:layout_constraintTop_toTopOf="@id/tvDescribeTitle"
+                tools:text="@tools:sample/lorem/random" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/DefaultMargin"
+    tools:context=".homescreen.ui.SearchFragment">
+
+    <EditText
+        android:id="@+id/edtSearchBox"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:autofillHints="name"
+        android:background="@drawable/bg_border_blue"
+        android:inputType="text"
+        android:padding="12dp"
+        app:layout_constraintEnd_toStartOf="@id/btnSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:hint="Nhập tên dịch vụ cần tìm" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/edtSearchBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edtSearchBox" />
+
+    <RadioGroup
+        android:id="@+id/rgSearchOption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/edtSearchBox"
+        app:layout_constraintStart_toStartOf="@id/edtSearchBox"
+        app:layout_constraintTop_toBottomOf="@id/edtSearchBox">
+
+        <RadioButton
+            android:id="@+id/rBtnSearchOption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor" />
+
+        <RadioButton
+            android:id="@+id/rBtnSearchOption2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:checked="true"
+            android:text="@string/services" />
+
+        <RadioButton
+            android:id="@+id/rBtnSearchOption3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/txtTvHospital" />
+    </RadioGroup>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rgSearchOption" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvResultSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/DefaultMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

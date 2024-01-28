@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PrivateHospital" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue116696</item>
+        <item name="colorPrimaryVariant">@color/blue116696</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue116696</item>
+        <item name="colorSecondaryVariant">@color/blue116696</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!--Font-->
+        <item name="fontFamily">serif</item>
+
+        <!--Màu của mấy cái control như nút quay về, 3 chấm đứng của menu-->
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="Theme.PrivateHospital" parent="Base.Theme.PrivateHospital" />
+
+    <style name="Theme.PrivateHospital.Toolbar" parent="Base.Theme.PrivateHospital">
+        <!--Màu title của menu item trên toolbar-->
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
+    <style name="TextAppearance.PrivateHospital.Title" parent="Base.Theme.PrivateHospital">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.PrivateHospital.Content" parent="Base.Theme.PrivateHospital">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

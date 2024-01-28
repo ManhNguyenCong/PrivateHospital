@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homescreen.ui.AppointmentFragment">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:background="@color/blue116696"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvChooseDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/DefaultMargin"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="64dp"
+                android:layout_height="3dp"
+                android:background="@drawable/bg_rec_border"
+                android:backgroundTint="@color/gray717171"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvChooseDateTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/txtTVChooseDateTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+
+            <DatePicker
+                android:id="@+id/dpChooseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_border_blue"
+                android:backgroundTint="@color/grayF1F1F1"
+                android:headerBackground="@drawable/bg_header_date_picker"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvChooseDateTitle" />
+
+
+            <TextView
+                android:id="@+id/tvChooseTimeTitle"
+                style="@style/TextAppearance.PrivateHospital.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/DefaultMargin"
+                android:text="@string/txtTVChooseTimeTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dpChooseDate" />
+
+            <CheckedTextView
+                android:checked="true"
+                android:id="@+id/rBtnTomorrow"
+                style="@style/TextAppearance.PrivateHospital.Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_checked_text_view"
+                android:clickable="true"
+                android:padding="6dp"
+                android:text="@string/tomorrow"
+                android:textColor="@color/white"
+                android:textSize="@dimen/SmallTextSize"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvChooseTimeTitle" />
+
+            <CheckedTextView
+                android:id="@+id/rBtnAfternoon"
+                style="@style/TextAppearance.PrivateHospital.Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_checked_text_view"
+                android:clickable="true"
+                android:padding="6dp"
+                android:text="@string/afternoon"
+                android:textColor="@color/blue116696"
+                android:textSize="@dimen/SmallTextSize"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/rBtnTomorrow"
+                app:layout_constraintTop_toBottomOf="@id/tvChooseTimeTitle" />
+
+
+            <TextView
+                android:id="@+id/tvTimeTitle"
+                style="@style/TextAppearance.PrivateHospital.Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/timeTitle"
+                app:layout_constraintBottom_toBottomOf="@id/layoutChooseTime"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutChooseTime" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutChooseTime"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_rec_border"
+                android:backgroundTint="@color/grayF1F1F1"
+                android:paddingHorizontal="@dimen/DefaultMargin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvTimeTitle"
+                app:layout_constraintTop_toBottomOf="@id/rBtnTomorrow">
+
+                <NumberPicker
+                    android:id="@+id/npHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHourTitle"
+                    style="@style/TextAppearance.PrivateHospital.Content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hours"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/SmallTextSize"
+                    app:layout_constraintBottom_toBottomOf="@id/npHours"
+                    app:layout_constraintStart_toEndOf="@+id/npHours"
+                    app:layout_constraintTop_toTopOf="@id/npHours" />
+
+                <NumberPicker
+                    android:id="@+id/npMinutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvHourTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMinutesTitle"
+                    style="@style/TextAppearance.PrivateHospital.Content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minutes"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/SmallTextSize"
+                    app:layout_constraintBottom_toBottomOf="@id/npHours"
+                    app:layout_constraintStart_toEndOf="@+id/npMinutes"
+                    app:layout_constraintTop_toTopOf="@id/npHours" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

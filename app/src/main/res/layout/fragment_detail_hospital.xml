@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayF1F1F1"
+    tools:context=".homescreen.ui.DetailHospitalFragment">
+
+    <ImageView
+        android:id="@+id/imgHospital"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_rec_border"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgHospital">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="96dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="@dimen/DefaultMargin"
+            android:background="@drawable/bg_rec_border"
+            android:backgroundTint="@color/gray717171"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/TextAppearance.PrivateHospital.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/DefaultMargin"
+            android:layout_marginTop="@dimen/DefaultMargin"
+            android:textColor="@color/blue116696"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:paddingVertical="8dp"
+            android:id="@+id/tvShowInMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvAddress"
+            android:text="@string/txtTVShowInMap"/>
+
+        <TextView
+            android:id="@+id/tvDescribe"
+            style="@style/TextAppearance.PrivateHospital.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/DefaultMargin"
+            android:layout_marginTop="8dp"
+            android:maxHeight="68dp"
+            android:textColor="@color/gray717171"
+            android:textSize="@dimen/SmallTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/tvMajorTitle"
+            style="@style/TextAppearance.PrivateHospital.Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DefaultMargin"
+            android:layout_marginTop="@dimen/DefaultMargin"
+            android:text="@string/majorTitle"
+            android:textSize="@dimen/TooMediumTextSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescribe" />
+
+        <TextView
+            android:id="@+id/tvMajor"
+            style="@style/TextAppearance.PrivateHospital.Content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="@dimen/DefaultMargin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvMajorTitle"
+            app:layout_constraintTop_toTopOf="@id/tvMajorTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/tvAddressTitle"
+            style="@style/TextAppearance.PrivateHospital.Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DefaultMargin"
+            android:layout_marginTop="@dimen/DefaultMargin"
+            android:text="@string/addressTitle"
+            android:textSize="@dimen/TooMediumTextSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMajor" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            style="@style/TextAppearance.PrivateHospital.Content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="@dimen/DefaultMargin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvAddressTitle"
+            app:layout_constraintTop_toTopOf="@id/tvAddressTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/tvAppreciateTitle"
+            style="@style/TextAppearance.PrivateHospital.Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DefaultMargin"
+            android:text="@string/appreciateTitle"
+            android:textSize="@dimen/TooMediumTextSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rbAppreciate"
+            app:layout_constraintBottom_toBottomOf="@id/rbAppreciate"/>
+
+        <RatingBar
+            android:id="@+id/rbAppreciate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="@dimen/DefaultMargin"
+            android:numStars="5"
+            android:rating="5"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:layout_constraintStart_toEndOf="@id/tvAppreciateTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvShowInMap" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
