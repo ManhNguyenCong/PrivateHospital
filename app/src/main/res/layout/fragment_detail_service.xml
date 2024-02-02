@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/DefaultMargin"
-    tools:context=".homescreen.ui.DetailServiceFragment">
+    tools:context=".homescreen.ui.fragment.DetailServiceFragment">
 
     <TextView
         android:id="@+id/tvName"
@@ -135,9 +135,20 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/TooMediumTextSize"
                     android:textStyle="bold"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toStartOf="@id/tvTypeOfMoney"
+                    app:layout_constraintTop_toTopOf="@id/tvPriceTitle"
+                    tools:text="200000" />
+
+                <TextView
+                    android:id="@+id/tvTypeOfMoney"
+                    style="@style/TextAppearance.PrivateHospital.Content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/SmallTextSize"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvPriceTitle"
-                    tools:text="200000 vnđ" />
+                    android:text="@string/txtTypeOfMoney" />
 
                 <Button
                     android:id="@+id/btnAppointment"

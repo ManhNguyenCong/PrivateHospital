@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".homescreen.ui.HomeFragment"
+    tools:context=".homescreen.ui.fragment.HomeFragment"
     tools:showIn="@layout/activity_main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,29 +16,29 @@
             android:id="@+id/img1"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:layout_marginTop="@dimen/DefaultMargin"
             android:scaleType="center"
             android:scaleX="1.5"
             android:scaleY="1.5"
             android:src="@mipmap/ic_app_foreground"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@id/layoutGreeting"
+            app:layout_constraintBottom_toBottomOf="@id/layoutGreeting"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutGreeting"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@id/img1"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@id/img1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/img1">
+            android:layout_marginTop="@dimen/DefaultMargin"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tvGreeting"
                 style="@style/TextAppearance.PrivateHospital.Content"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/TooMediumTextSize"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/tvSuggestLogin"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -50,11 +50,11 @@
                 android:id="@+id/tvSuggestLogin"
                 style="@style/TextAppearance.PrivateHospital.Content"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/tvSuggestLogin"
                 android:textColor="@color/gray717171"
-                android:textSize="16sp"
+                android:textSize="@dimen/SmallTextSize"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -149,6 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/DefaultMargin"
             android:text="@string/tvMakeAnAppointment"
+            android:textSize="@dimen/TooMediumTextSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cvAppointmentSchedule" />
@@ -169,6 +170,7 @@
                 android:id="@+id/tvDoctorTitle"
                 style="@style/TextAppearance.PrivateHospital.Content"
                 android:layout_width="0dp"
+                android:textSize="@dimen/SmallTextSize"
                 android:layout_height="wrap_content"
                 android:text="@string/txtTvDoctorTitle"
                 android:textColor="@color/yellowFFEB3B"
@@ -185,7 +187,7 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/txtTvDoctorContent"
                 android:textColor="@color/white"
-                android:textSize="13sp"
+                android:textSize="@dimen/VerySmallTextSize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvDoctorTitle" />
@@ -228,12 +230,12 @@
             <TextView
                 android:id="@+id/tvService"
                 style="@style/TextAppearance.PrivateHospital.Content"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="@string/txtTvService"
                 android:textColor="@color/blue116696"
-                android:textSize="16sp"
+                android:textSize="@dimen/SmallTextSize"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/icService"
@@ -272,7 +274,7 @@
                 android:layout_marginStart="8dp"
                 android:text="@string/txtTvHospital"
                 android:textColor="@color/blue116696"
-                android:textSize="16sp"
+                android:textSize="@dimen/SmallTextSize"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/icHospital"
@@ -286,6 +288,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/DefaultMargin"
+            android:textSize="@dimen/TooMediumTextSize"
             android:text="Lối tắt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -302,7 +305,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/serviceTitle"
             tools:itemCount="3"
-            tools:listitem="@layout/item_services_list" />
+            tools:listitem="@layout/item_categories_list" />
 
         <TextView
             android:id="@+id/tvTopHospitalsTitle"
@@ -311,6 +314,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/DefaultMargin"
             android:text="@string/txtTVTopHospitalTitle"
+            android:textSize="@dimen/TooMediumTextSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rvServices" />

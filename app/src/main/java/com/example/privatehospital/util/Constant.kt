@@ -8,6 +8,11 @@ const val SERVICE_TITLE = "service"
 /**
  * This constant is used to
  */
+const val CATEGORY_TITLE = "category"
+
+/**
+ * This constant is used to
+ */
 const val HOSPITAL_TITLE = "hospital"
 
 /**

@@ -55,4 +55,11 @@
     <string name="logout">Đăng xuất</string>
     <string name="save">Lưu</string>
     <string name="txtNoAppointment">Bạn chưa đặt lịch khám nào...</string>
+    <string name="majorInItemDoctor">Chuyên khoa: %s</string>
+    <string name="hotline">Hotline:</string>
+    <string name="website">Website:</string>
+    <string name="email">Email:</string>
+    <string name="fragmentDetailHospitalTitle">Thông tin bệnh viện</string>
+    <string name="txtFragmentDetailServiceTitle">Thông tin dịch vụ</string>
+    <string name="txtTypeOfMoney">(vnđ)</string>
 </resources>

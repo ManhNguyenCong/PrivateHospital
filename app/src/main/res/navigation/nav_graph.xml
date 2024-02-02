@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.privatehospital.homescreen.ui.HomeFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.HomeFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home">
         <action
@@ -16,22 +16,28 @@
         <action
             android:id="@+id/action_homeFragment_to_listObjectsFragment"
             app:destination="@id/listObjectsFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_appointmentFragment"
-            app:destination="@id/appointmentFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.privatehospital.homescreen.ui.SearchFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.SearchFragment"
         android:label="@string/search"
         tools:layout="@layout/fragment_search">
         <argument
             android:name="objectTitle"
             app:argType="string" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailServiceFragment"
+            app:destination="@id/detailServiceFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailHospitalFragment"
+            app:destination="@id/detailHospitalFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailDoctorFragment"
+            app:destination="@id/detailDoctorFragment" />
     </fragment>
     <fragment
         android:id="@+id/listObjectsFragment"
-        android:name="com.example.privatehospital.homescreen.ui.ListObjectsFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.ListObjectsFragment"
         android:label=""
         tools:layout="@layout/fragment_list_objects">
         <action
@@ -40,34 +46,81 @@
         <argument
             android:name="objectTitle"
             app:argType="string" />
+        <argument
+            android:name="categoryId"
+            android:defaultValue=""
+            app:argType="string" />
+        <action
+            android:id="@+id/action_listObjectsFragment_self"
+            app:destination="@id/listObjectsFragment" />
+        <action
+            android:id="@+id/action_listObjectsFragment_to_detailServiceFragment"
+            app:destination="@id/detailServiceFragment" />
+        <action
+            android:id="@+id/action_listObjectsFragment_to_detailHospitalFragment"
+            app:destination="@id/detailHospitalFragment" />
+        <action
+            android:id="@+id/action_listObjectsFragment_to_detailDoctorFragment"
+            app:destination="@id/detailDoctorFragment" />
     </fragment>
     <fragment
         android:id="@+id/appointmentFragment"
-        android:name="com.example.privatehospital.homescreen.ui.AppointmentFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.AppointmentFragment"
         android:label="Chọn thời gian"
         tools:layout="@layout/fragment_appointment" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.privatehospital.homescreen.ui.LoginFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.LoginFragment"
         android:label="@string/login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/personalInfoFragment"
-        android:name="com.example.privatehospital.homescreen.ui.PersonalInfoFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.PersonalInfoFragment"
         android:label="@string/personalInforTitle"
         tools:layout="@layout/fragment_personal_info" />
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.example.privatehospital.homescreen.ui.SettingFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.SettingFragment"
         android:label="@string/setting"
         tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.privatehospital.homescreen.ui.RegisterFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.RegisterFragment"
         android:label="@string/register"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/detailServiceFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.DetailServiceFragment"
+        android:label="@string/txtFragmentDetailServiceTitle"
+        tools:layout="@layout/fragment_detail_service">
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailServiceFragment_to_appointmentFragment"
+            app:destination="@id/appointmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHospitalFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.DetailHospitalFragment"
+        android:label="@string/fragmentDetailHospitalTitle"
+        tools:layout="@layout/fragment_detail_hospital">
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailDoctorFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.DetailDoctorFragment"
+        android:label="@string/doctorInfoTitle"
+        tools:layout="@layout/fragment_detail_doctor">
+
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>

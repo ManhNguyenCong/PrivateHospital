@@ -1,7 +1,10 @@
 package com.example.privatehospital.network
 
 import com.example.privatehospital.model.Category
+import com.example.privatehospital.model.Doctor
+import com.example.privatehospital.model.Hospital
 import com.example.privatehospital.model.Major
+import com.example.privatehospital.model.Service
 import com.example.privatehospital.util.BASE_URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -24,6 +27,15 @@ interface HospitalApiService {
 
     @GET("tblCategory.json")
     suspend fun getCategories(): List<Category>
+
+    @GET("tblService.json")
+    suspend fun getServices(): List<Service>
+
+    @GET("tblHospital.json")
+    suspend fun getHospitals(): List<Hospital>
+
+    @GET("tblDoctor.json")
+    suspend fun getDoctors(): List<Doctor>
 }
 
 object HospitalApi {

@@ -68,4 +68,6 @@ dependencies {
 
     implementation("com.google.firebase:firebase-database:20.3.0")
 
+    // Coil
+    implementation("io.coil-kt:coil:1.1.1")
 }

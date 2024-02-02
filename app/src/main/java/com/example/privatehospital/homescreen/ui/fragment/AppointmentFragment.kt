@@ -1,10 +1,9 @@
-package com.example.privatehospital.homescreen.ui
+package com.example.privatehospital.homescreen.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.privatehospital.R
 import com.example.privatehospital.databinding.FragmentAppointmentBinding

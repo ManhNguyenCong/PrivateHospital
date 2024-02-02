@@ -1,7 +1,6 @@
-package com.example.privatehospital.homescreen.ui
+package com.example.privatehospital.homescreen.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +11,10 @@ import com.example.privatehospital.R
 import com.example.privatehospital.databinding.FragmentHomeBinding
 import com.example.privatehospital.homescreen.viewmodel.HospitalViewModel
 import com.example.privatehospital.homescreen.viewmodel.HospitalViewModelFactory
+import com.example.privatehospital.util.CATEGORY_TITLE
 import com.example.privatehospital.util.DOCTOR_TITLE
 import com.example.privatehospital.util.HOSPITAL_TITLE
 import com.example.privatehospital.util.SERVICE_TITLE
-import com.example.privatehospital.util.TAG
 import com.example.privatehospital.util.findNavControllerSafely
 
 class HomeFragment : Fragment() {
@@ -53,7 +52,7 @@ class HomeFragment : Fragment() {
 
         binding.imgService.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToListObjectsFragment(
-                SERVICE_TITLE
+                CATEGORY_TITLE
             )
             findNavControllerSafely()?.navigate(action)
         }
@@ -64,12 +63,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getMajors().observe(this.viewLifecycleOwner) {
-            Log.d(TAG, "onViewCreated: " + it.size)
-        }
-        viewModel.getCategoriesByMajorId("0").observe(this.viewLifecycleOwner) {
-            Log.d(TAG, "onViewCreated: ${it.size}")
-        }
+        binding.tvGreeting.text = getString(R.string.welcome_to_private_hospital)
     }
 
     /**
@@ -90,8 +84,6 @@ class HomeFragment : Fragment() {
                         true
                     }
                     R.id.iMenuMore -> {
-                        val action = HomeFragmentDirections.actionHomeFragmentToAppointmentFragment()
-                        findNavControllerSafely()?.navigate(action)
                         true
                     }
                     else -> false
