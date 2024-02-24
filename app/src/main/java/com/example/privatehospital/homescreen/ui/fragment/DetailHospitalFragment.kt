@@ -30,7 +30,7 @@ class DetailHospitalFragment : Fragment() {
      * This is view model which is used to handle data before display them
      */
     private val viewModel: HospitalViewModel by activityViewModels {
-        HospitalViewModelFactory()
+        HospitalViewModelFactory(requireContext())
     }
 
     override fun onCreateView(

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/DefaultMargin"
+    tools:context=".homescreen.ui.fragment.DetailAppointmentFragment">
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/TextAppearance.PrivateHospital.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue116696"
+        android:textSize="@dimen/LargeTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/full_names" />
+
+    <ImageView
+        android:id="@+id/icHospital"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:importantForAccessibility="no"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_app_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:tint="@color/gray717171" />
+
+    <TextView
+        android:id="@+id/tvHospitalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:textSize="@dimen/VerySmallTextSize"
+        app:layout_constraintBottom_toBottomOf="@id/icHospital"
+        app:layout_constraintStart_toEndOf="@id/icHospital"
+        app:layout_constraintTop_toTopOf="@id/icHospital"
+        tools:text="@tools:sample/first_names" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/DefaultMargin"
+        app:layout_constraintBottom_toTopOf="@id/tvPriceTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icHospital">
+
+        <TextView
+            android:id="@+id/tvDescribe"
+            style="@style/TextAppearance.PrivateHospital.Content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@tools:sample/lorem/random" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvPriceTitle"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/DefaultMargin"
+        android:text="@string/priceTitle"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvDateTimeTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/tvPriceTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvDateTime"
+        app:layout_constraintTop_toTopOf="@id/tvPriceTitle"
+        tools:text="100.000 vnđ" />
+
+    <TextView
+        android:id="@+id/tvDateTimeTitle"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/DefaultMargin"
+        android:text="@string/txtTVDateTimeTitle"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvStatus"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvDateTimeTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvDateTimeTitle"
+        app:layout_constraintTop_toTopOf="@id/tvDateTimeTitle"
+        tools:text="00:00, 01/01/1999" />
+
+    <TextView
+        android:id="@+id/tvStatusTitle"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/txtStatusTitle"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btnRemoveAppointment"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvStatusTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvStatusTitle"
+        app:layout_constraintTop_toTopOf="@id/tvStatusTitle"
+        tools:text="Đã xác nhận" />
+
+    <Button
+        android:id="@+id/btnRemoveAppointment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#CD0E0E"
+        android:textColor="@color/white"
+        android:text="@string/txtRemoveAppointmentButton"
+        app:layout_constraintBottom_toTopOf="@id/tvRemoveNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRemoveNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/DefaultMargin"
+        android:text="@string/txtRemoveNote"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

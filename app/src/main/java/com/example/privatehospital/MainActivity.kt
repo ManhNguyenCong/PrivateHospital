@@ -11,12 +11,19 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.privatehospital.databinding.ActivityMainBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.auth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
+    override fun onStart() {
+        super.onStart()
+        Firebase.auth.signOut()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +37,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeFragment,
                 R.id.personalInfoFragment,
                 R.id.settingFragment,
-                R.id.loginFragment),
+                R.id.loginFragment
+            ),
             binding.mainDrawerLayout
         )
 
@@ -65,17 +73,27 @@ class MainActivity : AppCompatActivity() {
      * This function is used to setup navigation view when login/no login
      */
     private fun setupNavigationView() = binding.navView.apply {
-        // TODO check login ?
-        if(false) {
+        Firebase.auth.apply {
+            setupNavigationView(currentUser)
+
+            // Add auth state listener. When changed, update nav view
+            addAuthStateListener { auth ->
+                setupNavigationView(auth.currentUser)
+            }
+        }
+    }
+
+    private fun setupNavigationView(user: FirebaseUser?) = binding.navView.apply {
+        if (user != null) {
+            // Check, ìf login
             menu.findItem(R.id.personalInfoFragment).isEnabled = true
-            menu.findItem(R.id.historyFragment).isEnabled = true
             menu.findItem(R.id.loginFragment).apply {
                 title = context.getString(R.string.logout)
                 icon = AppCompatResources.getDrawable(context, R.drawable.baseline_logout_24)
             }
         } else {
+            // If no login
             menu.findItem(R.id.personalInfoFragment).isEnabled = false
-            menu.findItem(R.id.historyFragment).isEnabled = false
             menu.findItem(R.id.loginFragment).apply {
                 title = context.getString(R.string.login)
                 icon = AppCompatResources.getDrawable(context, R.drawable.baseline_login_24)

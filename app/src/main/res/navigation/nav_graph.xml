@@ -16,6 +16,15 @@
         <action
             android:id="@+id/action_homeFragment_to_listObjectsFragment"
             app:destination="@id/listObjectsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailHospitalFragment"
+            app:destination="@id/detailHospitalFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailAppointmentFragment"
+            app:destination="@id/detailAppointmentFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -67,12 +76,21 @@
         android:id="@+id/appointmentFragment"
         android:name="com.example.privatehospital.homescreen.ui.fragment.AppointmentFragment"
         android:label="Chọn thời gian"
-        tools:layout="@layout/fragment_appointment" />
+        tools:layout="@layout/fragment_appointment">
+        <argument
+            android:name="serviceId"
+            app:argType="string" />
+
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.privatehospital.homescreen.ui.fragment.LoginFragment"
         android:label="@string/login"
         tools:layout="@layout/fragment_login">
+        <argument
+            android:name="isNavFromRegister"
+            android:defaultValue="false"
+            app:argType="boolean" />
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -81,7 +99,11 @@
         android:id="@+id/personalInfoFragment"
         android:name="com.example.privatehospital.homescreen.ui.fragment.PersonalInfoFragment"
         android:label="@string/personalInforTitle"
-        tools:layout="@layout/fragment_personal_info" />
+        tools:layout="@layout/fragment_personal_info">
+        <action
+            android:id="@+id/action_personalInfoFragment_to_detailAppointmentFragment"
+            app:destination="@id/detailAppointmentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.example.privatehospital.homescreen.ui.fragment.SettingFragment"
@@ -122,5 +144,16 @@
         <argument
             android:name="id"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailAppointmentFragment"
+        android:name="com.example.privatehospital.homescreen.ui.fragment.DetailAppointmentFragment"
+        android:label="@string/txtDetailAppointmentFragmentTitle"
+        tools:layout="@layout/fragment_detail_appointment">
+
+        <argument
+            android:name="serviceId"
+            app:argType="string" />
+
     </fragment>
 </navigation>

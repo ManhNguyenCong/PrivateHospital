@@ -66,8 +66,24 @@ dependencies {
     // Retrofit with Moshi Converter
     implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
 
-    implementation("com.google.firebase:firebase-database:20.3.0")
+    // Import the BoM for the Firebase platform
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation(platform("com.google.firebase:firebase-bom:32.4.1"))
+
+    // Firebase real-time database
+    implementation("com.google.firebase:firebase-database")
+    // Add the dependency for the Firebase Authentication library
+    implementation("com.google.firebase:firebase-auth-ktx")
 
     // Coil
     implementation("io.coil-kt:coil:1.1.1")
+
+    // Datastore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // Kotlin datetime
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+
+    // WorkManager
+    implementation("androidx.work:work-runtime-ktx:2.7.1")
 }

@@ -146,7 +146,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <CheckBox
-                    android:id="@+id/cbxRemember"
+                    android:id="@+id/cbxIsAgreed"
                     style="@style/TextAppearance.PrivateHospital.Content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -163,23 +163,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/SmallTextSize"
-                    app:layout_constraintStart_toEndOf="@id/cbxRemember"
-                    app:layout_constraintTop_toTopOf="@id/cbxRemember"
+                    app:layout_constraintStart_toEndOf="@id/cbxIsAgreed"
+                    app:layout_constraintTop_toTopOf="@id/cbxIsAgreed"
                     style="@style/TextAppearance.PrivateHospital.Content"
-                    app:layout_constraintBottom_toBottomOf="@id/cbxRemember"/>
+                    app:layout_constraintBottom_toBottomOf="@id/cbxIsAgreed"/>
 
                 <Button
-                    android:id="@+id/btnLogin"
+                    android:id="@+id/btnRegister"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/DefaultMargin"
+                    android:enabled="false"
                     android:text="@string/register"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cbxRemember" />
+                    app:layout_constraintTop_toBottomOf="@id/cbxIsAgreed" />
 
                 <TextView
-                    android:id="@+id/tvLinkToRegister"
+                    android:id="@+id/tvLinkToLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -189,7 +190,7 @@
                     android:textSize="@dimen/SmallTextSize"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+                    app:layout_constraintTop_toBottomOf="@id/btnRegister" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

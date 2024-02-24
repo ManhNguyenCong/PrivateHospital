@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">Bệnh viện tư</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Trang chủ</string>
     <string name="refresh">Làm mới</string>
     <string name="search">Tìm kiếm</string>
-    <string name="tvSuggestLogin"><u>Đăng nhập</u> để có thể đặt lịch khám</string>
+    <string name="txtGreeting">Xin chào, %s</string>
+    <!--    <string name="tvSuggestLogin"><u>Đăng nhập</u> để có thể đặt lịch khám</string>-->
+    <string name="tvSuggestLogin">Đăng nhập để có thể đặt lịch khám</string>
     <string name="services">Dịch vụ</string>
     <string name="tvMakeAnAppointment">Đặt khám ngay</string>
     <string name="welcome_to_private_hospital">Chào mừng bạn đến Bệnh viện tư</string>
@@ -62,4 +63,43 @@
     <string name="fragmentDetailHospitalTitle">Thông tin bệnh viện</string>
     <string name="txtFragmentDetailServiceTitle">Thông tin dịch vụ</string>
     <string name="txtTypeOfMoney">(vnđ)</string>
+    <string name="txtPhoneNumberIsEmpty">Số điện thoại không thể bỏ trống!</string>
+    <string name="txtPasswordNoCorrect">Mật khẩu có ít nhất 8 ký tự, 1 ký tự in hoa, 1 chữ số.</string>
+    <string name="txtRePasswordNoCorrect">Chưa khớp với mật khẩu đã nhập!</string>
+    <string name="txtEnterOTPCode">Nhập mã OTP</string>
+    <string name="confirmPhoneNumber">Xác thực số điện thoại</string>
+    <string name="txtNoteOTP"><i>(Mã OTP chỉ tồn tại trong 60s)</i></string>
+    <string name="txtOTPErrorTitle">Mã OTP lỗi</string>
+    <string name="txtOTPErrorContent">Mã OTP chưa chính xác!</string>
+    <string name="txtLoginError">Đăng nhập không thành công!</string>
+    <string name="txtLoginErrorMessage">Số điện thoại/Mật khẩu không chính xác!!!</string>
+    <string name="txtAccountErrorMessage">Số điện thoại chưa đăng ký…</string>
+    <string name="txtShortcutTitle">Lối tắt</string>
+    <string name="txtRemoveAppointmentButton">Hủy lịch khám</string>
+    <string name="txtTVDateTimeTitle">Lịch khám:</string>
+    <string name="txtDetailAppointmentFragmentTitle">Chi tiết lịch khám</string>
+    <string name="txtRemoveAppointmentTitle">Hủy lịch khám</string>
+    <string name="txtConfirmRemoveAppointment">Bạn chắc chắn muốn hủy lịch khám này?</string>
+    <string name="txtConfirm">Xác nhận</string>
+    <string name="txtCancel">Hủy</string>
+    <string name="txtRemoveNote"><i>*Chỉ có thể hủy lịch khám trước ít nhất 12 tiếng</i></string>
+    <string name="txtSaveSuccessful">Lưu thông tin mới thành công.</string>
+    <string name="txtSaveFailure">Lưu thông tin mới không thành công.</string>
+    <string name="txtSetAppointmentSuccessful">Đặt lịch khám thành công!</string>
+    <string name="txtSetAppointmentFailure">Đặt lịch khám không thành công…</string>
+    <string name="txtAddAppointmentTitle">Xác nhận đặt lịch</string>
+    <string name="txtAddAppointmentContent">"Bạn chắc chắn muốn đặt lịch khám dịch vụ này vào lúc: %s?"</string>
+    <string name="txtSetAppointment">Đặt lịch khám</string>
+    <string name="txtNoteLoginRequirement">Bạn cần đăng nhập, để có thể đặt lịch khám!!!</string>
+    <string name="txtStatusTitle">Trạng thái:</string>
+    <string name="txtNoResultSearch">Không tìm thấy kết quả tương ứng nào với <i>%s</i>…</string>
+    <string name="txtHaveAppointment">Bạn có lịch khám vào lúc: %s</string>
+
+
+    <string-array name="appointmentStatus">
+        <item>Chờ xác nhận</item>
+        <item>Đã xác nhận</item>
+        <item>Đã khám</item>
+        <item>Đã bỏ lỡ</item>
+    </string-array>
 </resources>

@@ -37,7 +37,7 @@ class ListObjectsFragment : Fragment() {
      * This is used to handle data before it is displayed
      */
     private val viewModel: HospitalViewModel by activityViewModels {
-        HospitalViewModelFactory()
+        HospitalViewModelFactory(requireContext())
     }
 
     override fun onCreateView(

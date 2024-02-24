@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvEnterOTPTitle"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blue116696"
+        android:padding="@dimen/DefaultMargin"
+        android:text="@string/confirmPhoneNumber"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtOTPCode"
+        style="@style/TextAppearance.PrivateHospital.Content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/DefaultMargin"
+        android:layout_marginTop="@dimen/DefaultMargin"
+        android:layout_marginEnd="8dp"
+        android:autofillHints="phone"
+        android:backgroundTint="@color/gray717171"
+        android:hint="@string/txtEnterOTPCode"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@id/btnReSendOTPCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEnterOTPTitle"
+        tools:ignore="LabelFor" />
+
+    <ImageButton
+        android:id="@+id/btnReSendOTPCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/DefaultMargin"
+        android:backgroundTint="@color/white"
+        android:contentDescription="Button re-send OTP code"
+        android:src="@drawable/baseline_refresh_24"
+        app:layout_constraintBottom_toBottomOf="@id/edtOTPCode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edtOTPCode"
+        app:tint="@color/blue116696" />
+
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/DefaultMargin"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/DefaultMargin"
+        android:text="@string/txtNoteOTP"
+        android:textSize="@dimen/VerySmallTextSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtOTPCode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

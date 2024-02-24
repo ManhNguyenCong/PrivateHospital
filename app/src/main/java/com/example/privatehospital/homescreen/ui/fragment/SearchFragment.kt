@@ -36,7 +36,7 @@ class SearchFragment : Fragment() {
      * This is view model which is used to handle data before display them
      */
     private val viewModel: HospitalViewModel by activityViewModels {
-        HospitalViewModelFactory()
+        HospitalViewModelFactory(requireContext())
     }
 
     override fun onCreateView(
@@ -75,7 +75,9 @@ class SearchFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            Toast.makeText(requireContext(), "Đang tìm kiếm...", Toast.LENGTH_SHORT).show()
+            // Visible progress bar
+            binding.progressBar.visibility = View.VISIBLE
+
             if (binding.rBtnSearchOption1.isChecked) {
                 // Search doctor
                 setupDoctorRecyclerView(txtSearch)
@@ -121,6 +123,8 @@ class SearchFragment : Fragment() {
                     it.first
                 }
             )
+            // Invisible progress bar
+            binding.progressBar.visibility = View.GONE
         }
     }
 
@@ -151,6 +155,8 @@ class SearchFragment : Fragment() {
                 list.filter { it.second.contains(txtSearch) }
                     .map { it.first }
             )
+            // Invisible progress bar
+            binding.progressBar.visibility = View.GONE
         }
     }
 
@@ -177,7 +183,8 @@ class SearchFragment : Fragment() {
                     it.first
                 }
             )
+            // Invisible progress bar
+            binding.progressBar.visibility = View.GONE
         }
     }
-
 }
