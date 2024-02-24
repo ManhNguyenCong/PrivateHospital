@@ -5,6 +5,12 @@
   <li>Register and Sign in with phone number, password and OTP code.</li>
   <li>Schedule a medical appointment.</li>
 </ul>
+<b>Technologies is used in this project:</b>
+<ul>
+  <li>Basic android composes, View Model, Data Store...</li>
+  <li>Firebase: Realtime Database, Storage and Authentication.</li>
+  <li>Retrofit with Moshi converter.</li>
+</ul>
 <b>Application preview:</b>
 <img src="/preview/home_screen.png" width="240"/>
 <img src="/preview/list_doctors_screen.png" width="240"/>
