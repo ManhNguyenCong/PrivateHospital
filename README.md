@@ -7,7 +7,7 @@
 </ul>
 <b>Technologies is used in this project:</b>
 <ul>
-  <li>Basic android composes, View Model, Data Store...</li>
+  <li>Basic android components, View Model, Data Store...</li>
   <li>Firebase: Realtime Database, Storage and Authentication.</li>
   <li>Retrofit with Moshi converter.</li>
 </ul>
